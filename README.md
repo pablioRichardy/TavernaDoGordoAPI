@@ -7,9 +7,9 @@ Essa aplicação é para melhorar a escalabilidade de uma aplicação para RPG d
 - Fazer uma base sólida.
 
 ## Rotas
-> / [GET]<br>
+```/ [GET]```<br>
 Página inicial da API, com informações do author e descrição da API;<br>
-> /registrar [POST]<br>
+```/registrar [POST]```<br>
 Rota para registrar usuários com um JSON contendo o seguinte padrão:<br>
 ```
 {

@@ -1,0 +1,14 @@
+{
+    "name": "root/application",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "yr0p"
+        }
+    ],
+    "require": {}
+}

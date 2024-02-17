@@ -13,7 +13,7 @@ class UsuarioRepository implements IUsuarioRepository
     private $db;
 
     public function __construct() {
-        $host = "172.18.0.2:3306";
+        $host = "172.18.0.4:3306";
         $dbname = "TavernaDoGordo";
         $usuario = "root";
         $senha = "123";

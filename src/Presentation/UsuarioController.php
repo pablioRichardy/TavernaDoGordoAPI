@@ -13,17 +13,14 @@ use src\UseCases\LogarUsuario;
 
 class UsuarioController
 {
-    public function criarUsuario() : void 
+    public function criarUsuario($dados = []) : void 
     {
         $usuarioRepository = new UsuarioRepository();
-        
-        $criaUsuario = new CriarUsuario($usuarioRepository);
-        $dados = json_decode(file_get_contents("php://input"), true);
+        $criaUsuario = new CriarUsuario($usuarioRepository, $dados["nomeUsuario"], $dados["senha"]);
 
         try
         {
-            $criaUsuario->executar($dados["nomeUsuario"], $dados["senha"]);
-            header("Content-type: application/json");
+            $criaUsuario->executar();
             http_response_code(200);
             die(
                 json_encode(

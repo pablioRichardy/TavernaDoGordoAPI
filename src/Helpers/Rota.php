@@ -56,13 +56,15 @@ class Rota
         $class = new \ReflectionClass("src\Presentation\\" . $controller);
         $class = $class->newInstance();
 
+        $dados = json_decode(file_get_contents("php://input"), true);
+
         if($argumento)
         {
             $class->$acao($argumento);
             return;
         }
 
-        $class->$acao();
+        $class->$acao($dados);
         return;
     }
 }

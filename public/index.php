@@ -1,6 +1,8 @@
 <?php
 
 header("Content-type: application/json");
+header('Access-Control-Allow-Origin: *');
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('Access-Control-Allow-Origin: *'); // Ou substitua * pelo domínio permitido
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS'); // Inclua todos os métodos suportados
@@ -10,14 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-header('Access-Control-Allow-Origin: *');
-
 use src\Helpers\Rota;
 
-header("");
-
-require '../vendor/autoload.php';
-require 'rotas.php';
+require_once '../vendor/autoload.php';
+require_once 'rotas.php';
 
 session_start();
 
